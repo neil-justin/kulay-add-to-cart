@@ -1,4 +1,5 @@
 import { Error, Loading } from '@/components';
+import { useCart } from '@/context';
 import { useProducts } from '@/hooks';
 import React from 'react';
 import { FlatList } from 'react-native';
@@ -6,6 +7,7 @@ import ProductCard from './ProductCard';
 
 export default function ProductList() {
   const { products, loading, error } = useProducts();
+  const { addToCart } = useCart();
   
 
   if (loading) {
@@ -26,6 +28,7 @@ export default function ProductList() {
           showTrashIcon={false}
           showQuantityControls={false}
           showAddToCart={true}
+          onAddToCart={() => addToCart(item)}
         />
       )}
       className="flex-1 bg-gray-50"
