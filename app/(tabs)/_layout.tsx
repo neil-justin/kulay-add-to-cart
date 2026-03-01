@@ -1,5 +1,7 @@
+import { CartTabLabel } from '@/components';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import React from 'react';
 
 export default function TabLayout() {
   return (
@@ -29,7 +31,7 @@ export default function TabLayout() {
         name="cart"
         options={{
           title: 'Cart',
-          tabBarLabel: 'Cart',
+          tabBarLabel: () => <CartTabLabel />,
           tabBarIcon: ({ color }) => (
             <Ionicons name="cart-outline" size={24} color={color} />
           ),
