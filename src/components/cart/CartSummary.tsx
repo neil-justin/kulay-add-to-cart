@@ -26,14 +26,14 @@ export default function CartSummary() {
   const phpTotal = convertUsdToPhp(summary.total);
   
   return (
-    <View className="bg-white rounded-t-2xl shadow-lg mx-0 mb-0 p-6 border border-gray-100">
-      <Text className="text-lg font-bold text-slate-800 mb-3">
+    <View className="bg-white rounded-t-2xl shadow-lg mx-0 mb-0 mt-2 sm:mt-4 p-3 sm:p-6 border border-gray-100">
+      <Text className="text-base sm:text-lg font-bold text-slate-800 mb-2 sm:mb-3">
         Order Summary
       </Text>
       
       <VoucherInput />
       
-      <View className="space-y-3">
+      <View className="space-y-2 sm:space-y-3">
         <View className="flex-row justify-between items-center">
           <Text className="text-sm text-slate-600">Subtotal</Text>
           <Text className="text-sm text-slate-800 font-semibold">

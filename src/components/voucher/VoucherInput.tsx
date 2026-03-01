@@ -26,8 +26,8 @@ export default function VoucherInput() {
   };
 
   return (
-    <View className="bg-white p-4 rounded-lg border border-gray-200 mb-4">
-      <Text className="text-lg font-semibold text-gray-800 mb-3">
+    <View className="bg-white p-2 sm:p-4 rounded-lg border border-gray-200 mb-2 sm:mb-4">
+      <Text className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
         Voucher Code
       </Text>
       
@@ -53,19 +53,19 @@ export default function VoucherInput() {
               value={inputCode}
               onChangeText={setInputCode}
               placeholder="Enter voucher code"
-              className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 bg-gray-50"
+              className="flex-1 border border-gray-300 rounded-l-md px-2 sm:px-3 py-1.5 sm:py-2 bg-gray-50 text-sm sm:text-base"
               autoCapitalize="none"
             />
             <TouchableOpacity
               onPress={handleApplyVoucher}
               disabled={!inputCode.trim()}
-              className={`px-4 py-2 rounded-r-md ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-r-md ${
                 inputCode.trim()
                   ? 'bg-blue-500'
                   : 'bg-gray-300'
               }`}
             >
-              <Text className={`font-medium ${
+              <Text className={`font-medium text-xs sm:text-sm ${
                 inputCode.trim() ? 'text-white' : 'text-gray-500'
               }`}>
                 Apply
@@ -74,13 +74,13 @@ export default function VoucherInput() {
           </View>
           
           {error && (
-            <Text className="text-red-500 text-sm mt-1">
+            <Text className="text-red-500 text-xs sm:text-sm mt-1">
               {error}
             </Text>
           )}
           
           
-          <Text className="text-gray-500 text-sm mt-1">
+          <Text className="text-gray-500 text-xs sm:text-sm mt-1">
             Use code "{VOUCHER_CODES.KULAY10}" for 10% off
           </Text>
         </View>

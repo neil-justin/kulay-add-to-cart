@@ -1,22 +1,21 @@
-import { useCart } from '@/context';
-import { CartItem } from '@/interfaces';
+import { Product } from '@/interfaces';
 import React from 'react';
 import { FlatList } from 'react-native';
 import { ProductCard } from '../products';
 
 interface CartListProps {
-  items: CartItem[];
+  items: Product[];
 }
 
 export default function CartList({ items }: CartListProps) {
-  const { updateQuantity, removeFromCart } = useCart();
-
-  const handleQuantityChange = (item: CartItem, newQuantity: number) => {
-    updateQuantity(item.id, newQuantity);
+  const handleQuantityChange = (item: Product, newQuantity: number) => {
+    // TODO: Implement quantity change logic in Step 4
+    console.log(`Change ${item.productName} quantity to ${newQuantity}`);
   };
 
-  const handleRemoveItem = (item: CartItem) => {
-    removeFromCart(item.id);
+  const handleRemoveItem = (item: Product) => {
+    // TODO: Implement remove item logic in Step 4
+    console.log(`Remove ${item.productName} from cart`);
   };
 
   return (
