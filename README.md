@@ -25,43 +25,43 @@ My submission entry for Kulay's mini task
 
 ## Requirements
 
-[x] **1. Static Products List**
-    - Create at least 4 static products.
-    - Each product should have the following fields:
-      - productName (string)
-      - description (string)
-      - price (number)
+- [x] **1. Static Products List**
+  - Create at least 4 static products.
+  - Each product should have the following fields:
+    - productName (string)
+    - description (string)
+    - price (number)
 
-[x] **2. Add to Cart Functionality**
-    - Allow users to add products to cart.
-    - Allow users to remove individual products from cart.
+- [x] **2. Add to Cart Functionality**
+  - Allow users to add products to cart.
+  - Allow users to remove individual products from cart.
 
-[x] **3. Cart Display**
-    - Display the number of items in the cart (real-time).
-    - Show all items in the cart with:
-      - Product name
-      - Price
-    - Display the total amount of all cart items (real-time updates required).
+- [x] **3. Cart Display**
+  - Display the number of items in the cart (real-time).
+  - Show all items in the cart with:
+    - Product name
+    - Price
+  - Display the total amount of all cart items (real-time updates required).
 
-[x] **4. Bonus (Optional) - Voucher Feature**
-    - Add an input field to apply a voucher code.
-    - If the user enters discount10, apply a 10% discount to the total.
-    - Show the updated discounted total clearly.
+- [x] **4. Bonus (Optional) - Voucher Feature**
+  - Add an input field to apply a voucher code.
+  - If the user enters discount10, apply a 10% discount to the total.
+  - Show the updated discounted total clearly.
 
-[x] **5. Hooks Usage**
-    - Showcase the use of different React Hooks such as:
-      - useState
-      - useEffect
-      - useMemo (if applicable)
-      - useContext or custom hooks (optional bonus)
+- [x] **5. Hooks Usage**
+  - Showcase the use of different React Hooks such as:
+    - useState
+    - useEffect
+    - useMemo (if applicable)
+    - useContext or custom hooks (optional bonus)
 
-[x] **6. Layout and Styling**
-    - Use Tailwind CSS for React Native for styling/layout
+- [x] **6. Layout and Styling**
+  - Use Tailwind CSS for React Native for styling/layout
 
 ## Output
 
-[x] Push your code to a public GitHub repository and share the link.
-[x] Export and include a working Android APK build.
+- [x] Push your code to a public GitHub repository and share the link.
+- [x] Export and include a working Android APK build.
 
 ## Implementation Details
 
@@ -91,7 +91,7 @@ My submission entry for Kulay's mini task
 
 - **TanStack Query** for fetching instead of custom React hooks and useEffect
 - **ARIA labels** and keyboard support for better accessibility
-- **Offline support** with AsyncStorage for cart persistence
+- **Offline support** with AsyncStorage (or something similar) for cart persistence
 - **Advanced error boundaries** for better error handling
 - **Animation support** using React Native Reanimated for smooth transitions
 
