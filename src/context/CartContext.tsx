@@ -1,5 +1,6 @@
 import { CartItem, Product } from '@/interfaces';
 import React, { createContext, ReactNode, useContext, useState } from 'react';
+import { VOUCHER_CODES } from '../constants';
 
 interface CartContextType {
   cartItems: CartItem[];
@@ -8,6 +9,10 @@ interface CartContextType {
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
   getTotalItems: () => number;
+  voucherCode: string;
+  isVoucherValid: boolean;
+  applyVoucher: (code: string) => boolean;
+  removeVoucher: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -26,6 +31,8 @@ interface CartProviderProps {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [voucherCode, setVoucherCode] = useState<string>('');
+  const [isVoucherValid, setIsVoucherValid] = useState<boolean>(false);
 
   const addToCart = (product: Product) => {
     setCartItems(prevItems => {
@@ -68,6 +75,22 @@ export function CartProvider({ children }: CartProviderProps) {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const applyVoucher = (code: string): boolean => {
+    if (code.toLowerCase() === VOUCHER_CODES.KULAY10.toLowerCase()) {
+      setVoucherCode(code);
+      setIsVoucherValid(true);
+      return true;
+    }
+    setVoucherCode('');
+    setIsVoucherValid(false);
+    return false;
+  };
+
+  const removeVoucher = () => {
+    setVoucherCode('');
+    setIsVoucherValid(false);
+  };
+
   const value: CartContextType = {
     cartItems,
     addToCart,
@@ -75,6 +98,10 @@ export function CartProvider({ children }: CartProviderProps) {
     updateQuantity,
     clearCart,
     getTotalItems,
+    voucherCode,
+    isVoucherValid,
+    applyVoucher,
+    removeVoucher,
   };
 
   return (

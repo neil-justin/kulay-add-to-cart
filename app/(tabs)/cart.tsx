@@ -17,7 +17,7 @@ export default function CartTab() {
             <View className="h-32" />
           </ScrollView>
           <View className="absolute bottom-0 left-0 right-0 bg-gray-50 pt-2">
-            <CartSummary items={cartItems} />
+            <CartSummary />
           </View>
         </View>
       )}

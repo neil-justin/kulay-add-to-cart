@@ -1,18 +1,18 @@
 import { useCurrencyConverter } from '@/hooks';
-import { CartItem, CartTotals } from '@/interfaces';
+import { CartTotals } from '@/interfaces';
 import React, { useMemo } from 'react';
 import { Text, View } from 'react-native';
+import { useCart } from '../../context/CartContext';
+import { DISCOUNT_RATES } from '../../constants';
+import VoucherInput from '../voucher/VoucherInput';
 
-interface CartSummaryProps {
-  items: CartItem[];
-}
-
-export default function CartSummary({ items }: CartSummaryProps) {
+export default function CartSummary() {
+  const { cartItems, isVoucherValid } = useCart();
   const { convertUsdToPhp, loading: currencyLoading } = useCurrencyConverter();
   
   const summary: CartTotals = useMemo(() => {
-    const subtotal = items.reduce((total, item) => total + (item.price * item.quantity), 0);
-    const discount = 0;
+    const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const discount = isVoucherValid ? subtotal * DISCOUNT_RATES.KULAY10 : 0;
     const total = subtotal - discount;
     
     return {
@@ -20,7 +20,7 @@ export default function CartSummary({ items }: CartSummaryProps) {
       discount,
       total,
     };
-  }, [items]);
+  }, [cartItems, isVoucherValid]);
   
   const phpSubtotal = convertUsdToPhp(summary.subtotal);
   const phpTotal = convertUsdToPhp(summary.total);
@@ -30,6 +30,8 @@ export default function CartSummary({ items }: CartSummaryProps) {
       <Text className="text-lg font-bold text-slate-800 mb-3">
         Order Summary
       </Text>
+      
+      <VoucherInput />
       
       <View className="space-y-3">
         <View className="flex-row justify-between items-center">
