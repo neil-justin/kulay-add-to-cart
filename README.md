@@ -2,6 +2,20 @@
 
 My submission entry for Kulay's mini task
 
+##  Download Android APK
+
+[![Download APK](https://img.shields.io/badge/Download-Android%20APK-green?style=for-the-badge&logo=android)](https://github.com/neil-justin/kulay-add-to-cart/releases/download/v1.0.0/kulay-add-to-cart-v1.0.0.apk)
+
+**Latest Version:** v1.0.0 | **Size:** ~81MB
+
+### Installation Instructions:
+1. **Download** the APK using the button above
+2. **Enable** "Install from unknown sources" in your Android device settings
+3. **Open** the downloaded APK file to install
+4. **Launch** the Kulay app and start shopping! 🛒
+
+> 💡 **Alternative:** Check out [all releases](https://github.com/neil-justin/kulay-add-to-cart/releases) for version history
+
 ## Tech Stack
 
 - **React Native** (using Expo)
