@@ -1,5 +1,5 @@
 import { useCurrencyConverter } from '@/hooks';
-import { CartSummary as CartSummaryType, Product } from '@/interfaces';
+import { CartTotals, Product } from '@/interfaces';
 import React, { useMemo } from 'react';
 import { Text, View } from 'react-native';
 
@@ -10,7 +10,7 @@ interface CartSummaryProps {
 export default function CartSummary({ items }: CartSummaryProps) {
   const { convertUsdToPhp, loading: currencyLoading } = useCurrencyConverter();
   
-  const summary: CartSummaryType = useMemo(() => {
+  const summary: CartTotals = useMemo(() => {
     const subtotal = items.reduce((total, item) => total + (item.price * (item.quantity ?? 1)), 0);
     const discount = 0;
     const total = subtotal - discount;

@@ -33,6 +33,12 @@
       ],
       "@/constants/*": [
         "./src/constants/*"
+      ],
+      "@/context": [
+        "./src/context"
+      ],
+      "@/context/*": [
+        "./src/context/*"
       ]
     }
   },
