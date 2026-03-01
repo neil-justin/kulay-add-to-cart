@@ -1,12 +1,13 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function EmptyCart() {
   return (
     <View className="flex-1 items-center justify-center px-6">
       <View className="bg-white rounded-2xl shadow-lg p-8 items-center border border-gray-100 max-w-xs w-full web:w-1/3 web:max-w-sm">
         <View className="w-16 h-16 bg-gray-100 rounded-full items-center justify-center mb-6">
-          <Text className="text-2xl">🛒</Text>
+          <Ionicons name="cart-outline" size={32} color="#6B7280" />
         </View>
         
         <Text className="text-xl font-bold text-slate-800 mb-3">

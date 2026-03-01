@@ -83,9 +83,11 @@ export default function ProductCard({
                 onPress={() => handleQuantityChange(-1)}
                 disabled={quantity <= 1}
               >
-                <Text className={`font-bold text-lg ${quantity <= 1 ? 'text-gray-400' : 'text-slate-700'}`}>
-                  -
-                </Text>
+                <Ionicons 
+                  name="remove" 
+                  size={18} 
+                  color={quantity <= 1 ? '#9CA3AF' : '#374151'} 
+                />
               </Pressable>
               
               <Text className="text-lg font-semibold text-slate-800 mx-4">
@@ -96,7 +98,7 @@ export default function ProductCard({
                 className="bg-emerald-600 hover:bg-emerald-700 rounded-lg w-8 h-8 items-center justify-center cursor-pointer transition-colors duration-200"
                 onPress={() => handleQuantityChange(1)}
               >
-                <Text className="text-white font-bold text-lg">+</Text>
+                <Ionicons name="add" size={18} color="white" />
               </Pressable>
             </View>
           </View>
