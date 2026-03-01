@@ -30,7 +30,7 @@ export default function ProductCard({
   
   const handleQuantityChange = (delta: number) => {
     const newQuantity = quantity + delta;
-    if (newQuantity >= 1 && onQuantityChange) {
+    if (newQuantity >= 0 && onQuantityChange) {
       onQuantityChange(newQuantity);
     }
   };
@@ -75,18 +75,13 @@ export default function ProductCard({
             
             <View className="flex-row items-center">
               <Pressable 
-                className={`rounded-lg w-8 h-8 items-center justify-center cursor-pointer transition-colors duration-200 ${
-                  quantity <= 1 
-                    ? 'bg-gray-100' 
-                    : 'bg-gray-200 hover:bg-gray-300'
-                }`}
+                className="bg-gray-200 hover:bg-gray-300 rounded-lg w-8 h-8 items-center justify-center cursor-pointer transition-colors duration-200"
                 onPress={() => handleQuantityChange(-1)}
-                disabled={quantity <= 1}
               >
                 <Ionicons 
                   name="remove" 
                   size={18} 
-                  color={quantity <= 1 ? '#9CA3AF' : '#374151'} 
+                  color="#374151" 
                 />
               </Pressable>
               
