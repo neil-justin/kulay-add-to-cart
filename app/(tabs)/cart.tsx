@@ -1,9 +1,9 @@
 import { CartList, CartSummary, EmptyCart } from '@/components';
-import { CartItem } from '@/interfaces';
+import { Product } from '@/interfaces';
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 
-const mockCartItems: CartItem[] = [
+const mockCartItems: Product[] = [
   {
     id: 1,
     productName: "Fjallraven - Foldsack No. 1 Backpack",
@@ -21,7 +21,7 @@ const mockCartItems: CartItem[] = [
 ];
 
 export default function CartTab() {
-  const [cartItems] = useState<CartItem[]>(mockCartItems);
+  const [cartItems] = useState<Product[]>(mockCartItems);
 
   return (
     <View className="flex-1 bg-gray-50">

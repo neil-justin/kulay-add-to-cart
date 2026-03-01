@@ -5,7 +5,7 @@ import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 
 interface ProductCardProps {
-  product: Product & { quantity?: number };
+  product: Product;
   showTrashIcon?: boolean;
   showQuantityControls?: boolean;
   showAddToCart?: boolean;
