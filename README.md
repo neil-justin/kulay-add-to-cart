@@ -21,9 +21,18 @@ My submission entry for Kulay's mini task
 ### Mobile App Screenshots
 <div align="center">
 
-**Products tab**
-
-**Cart tab**
+<table>
+<tr>
+<td align="center" width="300"><strong>Products tab</strong></td>
+<td width="20"></td>
+<td align="center" width="300"><strong>Cart tab</strong></td>
+</tr>
+<tr>
+<td align="center"><img width="300" alt="kulay-add-to-cart-android-products-tab" src="https://github.com/user-attachments/assets/b619a363-b7cf-44ef-a428-f9e0f9b0ebba" /></td>
+<td></td>
+<td align="center"><img width="300" alt="kulay-add-to-cart-android-cart-tab" src="https://github.com/user-attachments/assets/f8c13736-cce9-4bf7-9201-8218f7e9943b" /></td>
+</tr>
+</table>
 
 </div>
 
@@ -32,7 +41,11 @@ My submission entry for Kulay's mini task
 
 **Products tab**
 
+<img alt="kulay-add-to-cart-web-products-tab" src="https://github.com/user-attachments/assets/d32dd0eb-123a-415d-9e00-8b14099b3e8e" />
+
 **Cart tab**
+
+<img alt="kulay-add-to-cart-web-cart-tab" src="https://github.com/user-attachments/assets/e8fdbddc-ef2e-47dd-b495-15151c157bbf" />
 
 </div>
 
