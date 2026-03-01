@@ -1,6 +1,99 @@
-# Welcome to your Expo app 👋
+# Kulay - Add to Cart by neil-justin
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+My submission entry for Kulay's mini task
+
+## Tech Stack
+
+- **React Native** (using Expo)
+- **NativeWind** - Tailwind CSS for React Native
+- **TypeScript** - Type safety and better development experience
+- **Expo Router** - File-based navigation system
+
+## Project Features
+
+- **Scalable folder structure** - Organized by feature domains (components, hooks, context, interfaces, constants)
+- **Type aliases** for cleaner importing syntax using `@/` path mapping via babel-plugin-module-resolver
+- **Reusable components** - Modular UI components for products, cart, vouchers, loading states, and errors
+- **Custom hooks** - `useProducts`, `useCurrencyConverter`, and `useCart` for state management
+- **Strongly typed interfaces** - Product, Cart, Currency types for type safety
+- **Constants management** - Centralized API endpoints, voucher codes, and currency configuration
+
+## External APIs Used
+
+- **[FakeStore API](https://fakestoreapi.com/)** - Products listing (`https://fakestoreapi.com/products`)
+- **[Frankfurter API](https://frankfurter.dev/)** - Currency conversion from USD to PHP (`https://api.frankfurter.app/latest`)
+
+## Requirements
+
+[x] **1. Static Products List**
+    - Create at least 4 static products.
+    - Each product should have the following fields:
+      - productName (string)
+      - description (string)
+      - price (number)
+
+[x] **2. Add to Cart Functionality**
+    - Allow users to add products to cart.
+    - Allow users to remove individual products from cart.
+
+[x] **3. Cart Display**
+    - Display the number of items in the cart (real-time).
+    - Show all items in the cart with:
+      - Product name
+      - Price
+    - Display the total amount of all cart items (real-time updates required).
+
+[x] **4. Bonus (Optional) - Voucher Feature**
+    - Add an input field to apply a voucher code.
+    - If the user enters discount10, apply a 10% discount to the total.
+    - Show the updated discounted total clearly.
+
+[x] **5. Hooks Usage**
+    - Showcase the use of different React Hooks such as:
+      - useState
+      - useEffect
+      - useMemo (if applicable)
+      - useContext or custom hooks (optional bonus)
+
+[x] **6. Layout and Styling**
+    - Use Tailwind CSS for React Native for styling/layout
+
+## Output
+
+[x] Push your code to a public GitHub repository and share the link.
+[x] Export and include a working Android APK build.
+
+## Implementation Details
+
+### Context & State Management
+- **CartContext** - Global cart state using React Context API with useContext hook
+- **Custom useCart hook** - Encapsulates cart operations (add, remove, update quantity, clear, voucher management)
+
+### Custom Hooks Implemented
+- **useProducts** - Fetches products from FakeStore API with loading and error states
+- **useCurrencyConverter** - Real-time USD to PHP currency conversion with fallback rates
+- **useCart** - Cart state management with TypeScript support
+
+### Components Structure
+- **Products**: ProductCard, ProductList
+- **Cart**: CartList, CartSummary, CartTabLabel, EmptyCart  
+- **Voucher**: VoucherInput with validation
+- **Common**: Loading, Error components for better UX
+
+### React Hooks Usage
+- **useState** - Local component state management
+- **useEffect** - API calls and side effects
+- **useContext** - Global cart state access
+- **useMemo** - Performance optimization for calculations
+- **Custom hooks** - Reusable logic encapsulation
+
+## Improvement Ideas
+
+- **TanStack Query** for fetching instead of custom React hooks and useEffect
+- **ARIA labels** and keyboard support for better accessibility
+- **Offline support** with AsyncStorage for cart persistence
+- **Advanced error boundaries** for better error handling
+- **Animation support** using React Native Reanimated for smooth transitions
 
 ## Get started
 
@@ -22,29 +115,3 @@ In the output, you'll find options to open the app in a
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
