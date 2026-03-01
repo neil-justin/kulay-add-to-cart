@@ -36,9 +36,9 @@ export default function ProductCard({
   };
   
   return (
-    <View className="bg-white rounded-2xl shadow-lg mx-auto mb-6 p-6 border border-gray-100 max-w-sm w-full web:w-1/2 web:max-w-none">
+    <View className="bg-white rounded-2xl shadow-lg mx-auto mb-6 p-6 border border-gray-100 max-w-sm w-full web:w-1/3 web:max-w-none">
       <View className="flex-row justify-between items-start">
-        <View className={`flex-1 ${showTrashIcon ? 'pr-4' : ''}`}>
+        <View className="flex-1 pr-4">
           <Text 
             className="text-lg font-bold text-slate-800 mb-3" 
             numberOfLines={2}
@@ -48,7 +48,7 @@ export default function ProductCard({
           
           <Text 
             className="text-sm text-slate-600 mb-4" 
-            numberOfLines={showQuantityControls ? 1 : 3}
+            numberOfLines={3}
           >
             {product.description}
           </Text>
@@ -68,7 +68,7 @@ export default function ProductCard({
       
       <View className="pt-4 border-t border-gray-200">
         {showQuantityControls ? (
-          <View className="flex-row items-center justify-between">
+          <View className="flex-row items-center justify-between min-h-[48px]">
             <Text className="text-2xl font-black text-emerald-600">
               {currencyLoading ? '...' : `₱${phpPrice.toFixed(2)}`}
             </Text>
@@ -103,7 +103,7 @@ export default function ProductCard({
             </View>
           </View>
         ) : (
-          <View className="flex-row items-center justify-between">
+          <View className="flex-row items-center justify-between min-h-[48px]">
             <View>
               <Text className="text-2xl font-black text-emerald-600">
                 {currencyLoading ? '...' : `₱${phpPrice.toFixed(2)}`}
