@@ -16,9 +16,9 @@ My submission entry for Kulay's mini task
 
 > 💡 **Alternative:** Check out [all releases](https://github.com/neil-justin/kulay-add-to-cart/releases) for version history
 
-## App Preview
+## App Preview (Screenshots)
 
-### Mobile App Screenshots
+### Mobile App
 <div align="center">
 
 <table>
@@ -36,7 +36,7 @@ My submission entry for Kulay's mini task
 
 </div>
 
-### Web View Screenshot  
+### Web View  
 <div align="center">
 
 **Products tab**
